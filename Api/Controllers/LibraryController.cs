@@ -25,4 +25,12 @@ public class LibraryController(ILibraryService service) : ControllerBase
         var newBook = service.AddBook(book);
         return Ok(newBook);
     }
+    
+    [Route("[action]")]
+    [HttpPost]
+    public ActionResult<Libraryuser> Post([FromBody] CreateLibraryUserDto user)
+    {
+        var newUser = service.AddLibraryUser(user);
+        return Ok(newUser);
+    }
 }

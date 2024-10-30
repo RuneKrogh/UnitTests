@@ -4,6 +4,8 @@
 // </auto-generated>
 //----------------------
 
+using Service.Models;
+
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
 #pragma warning disable 472 // Disable "CS0472 The result of the expression is always 'false' since a value of type 'Int32' is never equal to 'null' of type 'Int32?'
@@ -154,7 +156,7 @@ namespace Generated
         }
 
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<SwaggerResponse<Book>> PostAsync(CreateBookDto book)
+        public virtual System.Threading.Tasks.Task<SwaggerResponse<Book>> PostBookAsync(CreateBookDto book)
         {
             return PostAsync(book, System.Threading.CancellationToken.None);
         }

@@ -8,6 +8,7 @@ public interface ILibraryService
 {
     Book AddBook(CreateBookDto dto);
     LoanResponse Loan(LoanBookDto dto);
+    Libraryuser AddLibraryUser(CreateLibraryUserDto dto);
 }
 
 public class LibraryService(LibraryContext context) : ILibraryService
@@ -30,5 +31,14 @@ public class LibraryService(LibraryContext context) : ILibraryService
         context.Loans.Add(loan);
         context.SaveChanges();
         return new LoanResponse() {Id = loan.Id};
+    }
+
+    public Libraryuser AddLibraryUser(CreateLibraryUserDto dto)
+    {
+        var libraryUser = dto.ToLibraryUser();
+        
+        context.Libraryusers.Add(libraryUser);
+        context.SaveChanges();
+        return libraryUser;
     }
 }
